@@ -48,9 +48,11 @@ function openCart() {
     modal.style.display = 'flex';
 }
 
+
 function closeCart() {
     document.getElementById('cart-modal').style.display = 'none';
 }
+
 
 function removeFromCart(index) {
     cart.splice(index, 1);
@@ -84,4 +86,5 @@ function submitOrder() {
 
 Telegram.WebApp.ready();
 Telegram.WebApp.expand();
+
 
