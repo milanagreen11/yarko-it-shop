@@ -1,6 +1,6 @@
 import telebot
 
-TOKEN = '8130399116:AAEB9Fd8cvUEK61rtpWa-18bB0cHFOjIEgw'
+TOKEN = '8130399116:AAEB9Fd8cvUEK61rtpWa-18bB0cHFOjIEg'
 ADMIN_ID = 52390006573
 
 bot = telebot.TeleBot(TOKEN)
@@ -16,3 +16,4 @@ def start(message):
 
 print("Бот запущен и ждёт заказы!")
 bot.infinity_polling()
+
