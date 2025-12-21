@@ -1,6 +1,6 @@
 import telebot
 
-TOKEN = '8130399116:AAEB9Fd8cvUEK61rtpWa-18bB0cHFOjIEg'
+TOKEN = '8130399116:AAEB9Fd8cvUEK61rtpWa-18bB0cHFOjIEgw'
 ADMIN_ID = 52390006573
 
 bot = telebot.TeleBot(TOKEN)
@@ -12,7 +12,11 @@ def handle_web_app_data(message):
 
 @bot.message_handler(commands=['start'])
 def start(message):
-    bot.send_message(message.chat.id, "Добро пожаловать!! Нажмите кнопку внизу, чтобы открыть магазин IT-услуг 🛒")
+    bot.send_message(message.chat.id, "Добро пожаловать! Нажмите кнопку внизу, чтобы открыть магазин IT-услуг 🛒")
+
+@bot.message_handler(text=['Тест'])
+def test(message):
+    bot.send_message(message.chat.id, "Питон в порядке!")
 
 print("Бот запущен и ждёт заказы!")
 bot.infinity_polling()
