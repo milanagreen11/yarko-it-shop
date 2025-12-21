@@ -17,12 +17,20 @@ function updateCart() {
 function checkout() {
     if (cart.length === 0) return;
     
-    let message = "🛒 Новый заказ в IT-магазине!\n\n";
+    let message = "🛒 Привет! Хочу заказать услуги:\n\n";
     cart.forEach((item, index) => {
         message += `${index + 1}. ${item.name}\n   Цена: ${item.price}\n\n`;
     });
-    message += `Всего услуг: ${cart.length}`;
-    
-    Telegram.WebApp.sendData(message);
+    message += `Всего услуг: ${cart.length}\n\nЖду связи!`;
+
+    const botUsername = "Sirius_Yarko_Shop_Bot";
+
+    Telegram.WebApp.openTelegramLink(`https:\/\/t.me/${botUsername}?text=${encodeURIComponent(message)}`);
     Telegram.WebApp.close();
 }
+
+Telegram.WebApp.ready();
+Telegram.WebApp.expand();
+
+
+
