@@ -11,7 +11,20 @@
     <h1>Добро пожаловать в IT-магазин! 🛒</h1>
 
     <button class="cart-button" onclick="checkout()">🛒<div id="cart-count" class="cart-count" style="display: none;">0</div></button>
-    <button id="checkout-button" class="checkout-button" onclick="checkout()">Оформить заказ</button>
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <h2>Ваша корзина</h2>
+            <div id="cart-items"></div>
+            <div id="total" class="total"></div>
+            <button id="checkout-btn" onclick="showPaymentForm()">Оформить заказ</button>
+            <div id="payment-form">
+                <input type="text" id="name" placeholder="Ваше имя" required>
+                <input type="email" id="email" placeholder="Ваш email или телефон" required>
+                <button type="button" onclick="submitOrder()">Отправить заказ</button>
+            </div>
+            <button onclick="closeCart()" style="margin-top: 15px; background: #888;">Закрыть</button>
+        </div>
+    </div>
 
     <div class="catalog">
 
@@ -53,4 +66,5 @@
         Telegram.WebApp.expand();
     </script>
 </body>
+
 </html>
