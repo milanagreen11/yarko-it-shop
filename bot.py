@@ -1,18 +1,18 @@
 import telebot
 
 TOKEN = '8130399116:AAEB9Fd8cvUEK61rtpWa-18bB0cHFOjIEgw'
-ADMIN_ID = 123234345
+ADMIN_ID = 52390006573
 
 bot = telebot.TeleBot(TOKEN)
 
 @bot.message_handler(content_types=['web_app_data'])
 def handle_web_app_data(message):
     order_text = message.web_app_data.data
-    bot.send_message(ADMIN_ID, f"🎉 Новый заказ!\n\n{order_text}")
+    bot.send_message(ADMIN_ID, f"🎉 Новый заказ от клиента!\n\n{order_text}\n\nID клиента: {message.chat.id}")
 
 @bot.message_handler(commands=['start'])
 def start(message):
-    bot.send_message(message.chat.id, "Бот для магазина готов! Откройте Mini App.")
+    bot.send_message(message.chat.id, "Добро пожаловать!! Нажмите кнопку внизу, чтобы открыть магазин IT-услуг 🛒")
 
-print("Бот запущен!")
+print("Бот запущен и ждёт заказы!")
 bot.infinity_polling()
