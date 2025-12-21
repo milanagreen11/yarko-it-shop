@@ -39,9 +39,7 @@ function openCart() {
         });
         totalElement.innerHTML = `Итого: от ${totalPrice.toLocaleString()} ₽`;
         document.getElementById('checkout-btn').style.display = 'block';
-        document.getElementById('payment-form').style.display = 'none';
     }
-
     modal.style.display = 'flex';
 }
 
@@ -73,11 +71,12 @@ function submitOrder() {
         message += `${index + 1}. ${item.name} — ${item.price}\n`;
     });
 
-    const botUsername = "Sirius_Yarko_Shop_Bot";  // твой username бота без @
+    const botUsername = "Sirius_Yarko_Shop_Bot";
 
-    Telegram.WebApp.openTelegramLink(`https://t.me/${botUsername}?text=${encodeURIComponent(message)}`);
+    Telegram.WebApp.openTelegramLink("https://t.me/" + botUsername + "?text=" + encodeURIComponent(message));
     Telegram.WebApp.close();
 }
+console.log("Script loaded!");
 
 Telegram.WebApp.ready();
 Telegram.WebApp.expand();
