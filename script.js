@@ -23,6 +23,7 @@ function openCart() {
 
     if (cart.length === 0) {
         itemsContainer.innerHTML = '<p style="text-align:center;">Корзина пуста</p>';
+        document.getElementById('checkout-btn').style.display = 'none';
         totalElement.innerHTML = '';
     } else {
         let totalPrice = 0;
@@ -39,6 +40,8 @@ function openCart() {
             totalPrice += priceNum;
         });
         totalElement.innerHTML = `Итого: от ${totalPrice.toLocaleString()} ₽`;
+        document.getElementById('checkout-btn').style.display = 'block';
+        document.getElementById('payment-form').style.display = 'none';
     }
 
     document.getElementById('payment-form').style.display = 'none';
@@ -81,3 +84,4 @@ function submitOrder() {
 
 Telegram.WebApp.ready();
 Telegram.WebApp.expand();
+
