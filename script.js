@@ -18,13 +18,12 @@ function openCart() {
     const modal = document.getElementById('cart-modal');
     const itemsContainer = document.getElementById('cart-items');
     const totalElement = document.getElementById('total');
-
     itemsContainer.innerHTML = '';
 
     if (cart.length === 0) {
         itemsContainer.innerHTML = '<p style="text-align:center;">Корзина пуста</p>';
-        document.getElementById('checkout-btn').style.display = 'none';
         totalElement.innerHTML = '';
+        document.getElementById('checkout-btn').style.display = 'none';
     } else {
         let totalPrice = 0;
         cart.forEach((item, index) => {
@@ -35,7 +34,6 @@ function openCart() {
                 <button onclick="removeFromCart(${index})">Удалить</button>
             `;
             itemsContainer.appendChild(div);
-
             let priceNum = parseInt(item.price.replace(/\D/g, '')) || 0;
             totalPrice += priceNum;
         });
@@ -44,15 +42,12 @@ function openCart() {
         document.getElementById('payment-form').style.display = 'none';
     }
 
-    document.getElementById('payment-form').style.display = 'none';
     modal.style.display = 'flex';
 }
-
 
 function closeCart() {
     document.getElementById('cart-modal').style.display = 'none';
 }
-
 
 function removeFromCart(index) {
     cart.splice(index, 1);
@@ -78,7 +73,7 @@ function submitOrder() {
         message += `${index + 1}. ${item.name} — ${item.price}\n`;
     });
 
-    const botUsername = "Sirius_Yarko_Shop_Bot";  // проверь свой username бота без @
+    const botUsername = "Sirius_Yarko_Shop_Bot";  // твой username бота без @
 
     Telegram.WebApp.openTelegramLink(`https://t.me/${botUsername}?text=${encodeURIComponent(message)}`);
     Telegram.WebApp.close();
@@ -86,5 +81,4 @@ function submitOrder() {
 
 Telegram.WebApp.ready();
 Telegram.WebApp.expand();
-
 
