@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yarko Shop</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <h1>Добро пожаловать в IT-магазин! 🛒</h1>
+
+    <button class="cart-button" onclick="checkout()">🛒<div id="cart-count" class="cart-count" style="display: none;">0</div></button>
+    <button id="checkout-button" class="checkout-button" onclick="checkout()">Оформить заказ</button>
+
+    <div class="catalog">
+
+        <div class="card">
+            <img src="https://elements-resized.envatousercontent.com/elements-cover-images/df59f252-a14f-4d59-924b-4dc5d8431892?w=433&cf_fit=scale-down&q=85&format=auto&s=9d24e2682000e4b0e8507690abeaeb948f6ccfcc38bd7ba6b972988a53bf3ccc" alt="Изготовление сайтов">
+            <div class="card-content">
+                <h2>Изготовление сайтов</h2>
+                <p>Создадим современный сайт под ключ: от landing page до интернет-магазина. Дизайн, верстка, backend.</p>
+                <div class="price">От 50 000 ₽</div>
+                <button onclick="addToCart('Изготовление сайтов', 'От 50 000 ₽')">Заказать</button>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <img src="https://clarisco.s3.ap-south-1.amazonaws.com/clarisco_blogs/blogimg-1725517365450.jpg" alt="Разработка Telegram-ботов">
+            <div class="card-content">
+                <h2>Разработка Telegram-ботов</h2>
+                <p>Автоматизация бизнеса: чат-боты, интеграции, магазины внутри Telegram, боты с искуственным интелектом. На Python.</p>
+                <div class="price">От 10 000 ₽</div>
+                <button onclick="addToCart('Разработка Telegram-ботов', 'От 10 000 ₽')">Заказать</button>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <img src="https://static.vecteezy.com/system/resources/previews/002/788/684/non_2x/social-media-marketing-concept-man-using-social-networking-smm-management-online-advertising-illustration-flat-vector.jpg" alt="Продвижение в соцсетях">
+            <div class="card-content">
+                <h2>Продвижение соцсетей</h2>
+                <p>SMM: контент-план, таргетинг, рост аудитории в VK, Instagram, Telegram. Аналитика и отчёты.</p>
+                <div class="price">От 20 000 ₽/мес</div>
+                <button onclick="addToCart('Продвижение соцсетей', 'От 20 000 ₽/мес')">Заказать</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        Telegram.WebApp.ready();
+        Telegram.WebApp.expand();
+    </script>
+</body>
+</html>
