@@ -57,30 +57,25 @@ function showPaymentForm() {
     document.getElementById('payment-form').style.display = 'block';
 }
 
-
 function submitOrder() {
-    alert("000000")
     const name = document.getElementById('name').value.trim();
     const contact = document.getElementById('email').value.trim();
-    alert("11111111111111111")
+
     if (!name || !contact) {
         alert('Заполните имя и контакт');
         return;
     }
-    alert("222222222222")
 
     let message = `🛒 Новый заказ!\n\nИмя: ${name}\nКонтакт: ${contact}\n\nУслуги:\n`;
     cart.forEach((item, index) => {
         message += `${index + 1}. ${item.name} — ${item.price}\n`;
     });
-    alert("3333333333333333")
 
-    Telegram.WebApp.sendData(message);
-    
-    alert("444444444444444");
+    // Показываем готовый текст заказа клиенту
+    alert('Заказ готов! Скопируйте текст ниже и отправьте мне в чат:\n\n' + message);
+
+    // Закрываем магазин
     Telegram.WebApp.close();
-    
-    alert("555555555555555")
 }
 
 
@@ -88,6 +83,7 @@ console.log("Script loaded!");
 
 Telegram.WebApp.ready();
 Telegram.WebApp.expand();
+
 
 
 
