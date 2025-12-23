@@ -70,10 +70,13 @@ function submitOrder() {
     cart.forEach((item, index) => {
         message += `${index + 1}. ${item.name} — ${item.price}\n`;
     });
-
-    const botUsername = "Sirius_Yarko_Shop_Bot";  // твой username бота без @
+    
+    alert("0000000000000000")
+    const botUsername = "Sirius_Yarko_Shop_Bot";  
+    alert("111111111111111111")
 
     Telegram.WebApp.openTelegramLink("https://t.me/" + botUsername + "?text=" + encodeURIComponent(message));
+    alert("22222222222222222222")
     
     alert('Заказ готов к отправке — нажмите "Отправить" в чате 😊');
     Telegram.WebApp.close();
@@ -109,6 +112,7 @@ console.log("Script loaded!");
 
 Telegram.WebApp.ready();
 Telegram.WebApp.expand();
+
 
 
 
