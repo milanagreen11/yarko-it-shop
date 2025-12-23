@@ -58,6 +58,7 @@ function showPaymentForm() {
 }
 
 function submitOrder() {
+    alert("0000")
     const name = document.getElementById('name').value.trim();
     const contact = document.getElementById('email').value.trim();
 
@@ -80,5 +81,6 @@ console.log("Script loaded!");
 
 Telegram.WebApp.ready();
 Telegram.WebApp.expand();
+
 
 
