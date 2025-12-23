@@ -58,7 +58,6 @@ function showPaymentForm() {
 }
 
 function submitOrder() {
-    alert("0000")
     const name = document.getElementById('name').value.trim();
     const contact = document.getElementById('email').value.trim();
 
@@ -72,15 +71,17 @@ function submitOrder() {
         message += `${index + 1}. ${item.name} — ${item.price}\n`;
     });
 
-    
     Telegram.WebApp.sendData(message);
-
+    alert('Заказ отправлен! Скоро свяжусь 😊');
     Telegram.WebApp.close();
 }
+
+
 console.log("Script loaded!");
 
 Telegram.WebApp.ready();
 Telegram.WebApp.expand();
+
 
 
 
