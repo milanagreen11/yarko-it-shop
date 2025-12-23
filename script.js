@@ -71,13 +71,14 @@ function submitOrder() {
         message += `${index + 1}. ${item.name} — ${item.price}\n`;
     });
 
-    const botUsername = "Sirius_Yarko_Shop_Bot";
+    
+    Telegram.WebApp.sendData(message);
 
-    Telegram.WebApp.openTelegramLink("https://t.me/" + botUsername + "?text=" + encodeURIComponent(message));
     Telegram.WebApp.close();
 }
 console.log("Script loaded!");
 
 Telegram.WebApp.ready();
 Telegram.WebApp.expand();
+
 
