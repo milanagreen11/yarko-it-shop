@@ -70,19 +70,21 @@ function submitOrder() {
     cart.forEach((item, index) => {
         message += `${index + 1}. ${item.name} — ${item.price}\n`;
     });
+    
+    const yourUsername = "milazelenko"; 
 
-    // Показываем готовый текст заказа клиенту
-    alert('Заказ готов! Скопируйте текст ниже и отправьте мне в чат:\n\n' + message);
+    Telegram.WebApp.openTelegramLink("https://t.me/" + yourUsername + "?text=" + encodeURIComponent(message));
 
-    // Закрываем магазин
+    alert('Заказ готов — нажмите "Отправить" в открывшемся чате 😊');
+
     Telegram.WebApp.close();
 }
-
 
 console.log("Script loaded!");
 
 Telegram.WebApp.ready();
 Telegram.WebApp.expand();
+
 
 
 
