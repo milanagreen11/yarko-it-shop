@@ -75,8 +75,11 @@ function submitOrder() {
     alert("3333333333333333")
 
     Telegram.WebApp.sendData(message);
-    alert('Заказ отправлен! Скоро свяжусь 😊');
+    
+    alert("444444444444444");
     Telegram.WebApp.close();
+    
+    alert("555555555555555")
 }
 
 
@@ -84,6 +87,7 @@ console.log("Script loaded!");
 
 Telegram.WebApp.ready();
 Telegram.WebApp.expand();
+
 
 
 
