@@ -58,35 +58,58 @@ function showPaymentForm() {
 }
 
 function submitOrder() {
-    alert("000000")
     const name = document.getElementById('name').value.trim();
     const contact = document.getElementById('email').value.trim();
-    alert("11111111111111111")
+
     if (!name || !contact) {
         alert('Заполните имя и контакт');
         return;
     }
-    alert("222222222222")
 
     let message = `🛒 Новый заказ!\n\nИмя: ${name}\nКонтакт: ${contact}\n\nУслуги:\n`;
     cart.forEach((item, index) => {
         message += `${index + 1}. ${item.name} — ${item.price}\n`;
     });
-    alert("3333333333333333")
 
-    Telegram.WebApp.sendData(message);
+    const botUsername = "Sirius_Yarko_Shop_Bot";  // твой username бота без @
+
+    Telegram.WebApp.openTelegramLink("https://t.me/" + botUsername + "?text=" + encodeURIComponent(message));
     
-    alert("444444444444444");
+    alert('Заказ готов к отправке — нажмите "Отправить" в чате 😊');
     Telegram.WebApp.close();
-    
-    alert("555555555555555")
 }
+
+// function submitOrder() {
+//     alert("000000")
+//     const name = document.getElementById('name').value.trim();
+//     const contact = document.getElementById('email').value.trim();
+//     alert("11111111111111111")
+//     if (!name || !contact) {
+//         alert('Заполните имя и контакт');
+//         return;
+//     }
+//     alert("222222222222")
+
+//     let message = `🛒 Новый заказ!\n\nИмя: ${name}\nКонтакт: ${contact}\n\nУслуги:\n`;
+//     cart.forEach((item, index) => {
+//         message += `${index + 1}. ${item.name} — ${item.price}\n`;
+//     });
+//     alert("3333333333333333")
+
+//     Telegram.WebApp.sendData(message);
+    
+//     alert("444444444444444");
+//     Telegram.WebApp.close();
+    
+//     alert("555555555555555")
+// }
 
 
 console.log("Script loaded!");
 
 Telegram.WebApp.ready();
 Telegram.WebApp.expand();
+
 
 
 
