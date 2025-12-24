@@ -73,9 +73,26 @@ function submitOrder() {
     
     const yourUsername = "milazelenko"; 
 
-    Telegram.WebApp.openTelegramLink("https://t.me/" + yourUsername + "?text=" + encodeURIComponent(message));
-
-    alert('Заказ готов — нажмите "Отправить" в открывшемся чате 😊');
+    fetch('https://milanabh.beget.tech/submit_order', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            name: name,
+            contact: contact,
+            services: cart
+        })
+    })
+    .then(response => response.json())
+    .then(data => {    
+        alert('Заказ отправлен! Спасибо!');
+        Telegram.WebApp.close();
+    })
+    .catch(error => {
+        alert('Ошибка отправки. Попробуйте позже.');
+    });
+    alert('Заказ отправлен! Скоро свяжусь 😊');
 
     Telegram.WebApp.close();
 }
@@ -84,6 +101,7 @@ console.log("Script loaded!");
 
 Telegram.WebApp.ready();
 Telegram.WebApp.expand();
+
 
 
 
