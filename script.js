@@ -88,13 +88,14 @@ function submitOrder() {
     })
     .catch(error => {
         console.error('Ошибка:', error);
-        alert('Ошибка отправки заказа. Попробуйте позже или напишите мне напрямую.', error);
+        alert('Ошибка отправки заказа. Попробуйте позже или напишите мне напрямую.');
     });
 }
 
 console.log("Script loaded!");
 Telegram.WebApp.ready();
 Telegram.WebApp.expand();
+
 
 
 
