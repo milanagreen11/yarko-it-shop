@@ -65,7 +65,7 @@ function submitOrder() {
         return;
     }
 
-    fetch('http://155.212.223.179:5000/submit_order', {
+    fetch('http://155.212.223.179/submit_order', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -96,3 +96,4 @@ function submitOrder() {
 console.log("Script loaded!");
 Telegram.WebApp.ready();
 Telegram.WebApp.expand();
+
