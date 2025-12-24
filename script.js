@@ -89,11 +89,11 @@ function submitOrder() {
     .catch(error => {
         console.error('Ошибка:', error);
         alert('Ошибка отправки заказа. Попробуйте позже или напишите мне напрямую.');
-        // Не закрываем приложение, чтобы клиент мог попробовать ещё раз
     });
 }
 
 console.log("Script loaded!");
 Telegram.WebApp.ready();
 Telegram.WebApp.expand();
+
 
